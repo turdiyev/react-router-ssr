@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Helmet from 'react-helmet';
+import homepageStyles from './homepage.scss';
 class Menu extends Component {
 	render() {
 		return (
@@ -24,7 +25,7 @@ class Menu extends Component {
 class Homepage extends Component {
 	render() {
 		return (
-			<div>
+			<div className={homepageStyles.component}>
                 <Helmet
 					title="Welcome to our Homepage"
 				/>
