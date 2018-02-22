@@ -11156,6 +11156,10 @@ var _homepage = __webpack_require__(80);
 
 var _homepage2 = _interopRequireDefault(_homepage);
 
+var _aboutpage = __webpack_require__(81);
+
+var _aboutpage2 = _interopRequireDefault(_aboutpage);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -11186,7 +11190,7 @@ var Menu = function (_Component) {
 						'li',
 						null,
 						_react2.default.createElement(
-							_reactRouterDom.Link,
+							_reactRouterDom.NavLink,
 							{ to: '/' },
 							'Homepage'
 						)
@@ -11195,7 +11199,7 @@ var Menu = function (_Component) {
 						'li',
 						null,
 						_react2.default.createElement(
-							_reactRouterDom.Link,
+							_reactRouterDom.NavLink,
 							{ to: '/about' },
 							'About'
 						)
@@ -11204,7 +11208,7 @@ var Menu = function (_Component) {
 						'li',
 						null,
 						_react2.default.createElement(
-							_reactRouterDom.Link,
+							_reactRouterDom.NavLink,
 							{ to: '/contact' },
 							'Contact'
 						)
@@ -11262,7 +11266,7 @@ var About = function (_Component3) {
 		value: function render() {
 			return _react2.default.createElement(
 				'div',
-				null,
+				{ className: _aboutpage2.default.component },
 				_react2.default.createElement(_reactHelmet2.default, {
 					title: 'Welcome to our About'
 				}),
@@ -11353,6 +11357,13 @@ exports.default = App;
 
 // removed by extract-text-webpack-plugin
 module.exports = {"component":"_33SAfv3k9b"};
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"component":"B0jvakeOEW"};
 
 /***/ })
 /******/ ]);
