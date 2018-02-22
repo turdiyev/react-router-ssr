@@ -10,7 +10,7 @@ module.exports = [
 	{
 		name: 'client',
 		target: 'web',
-		entry: './client.js',
+		entry: './src/client.js',
 		output: {
 			path: path.join(__dirname, 'static'),
 			filename: 'client.js',
@@ -73,7 +73,7 @@ module.exports = [
 	{
 		name: 'server',
 		target: 'node',
-		entry: './server.js',
+		entry: './src/server.js',
 		output: {
 			path: path.join(__dirname, 'static'),
 			filename: 'server.js',
