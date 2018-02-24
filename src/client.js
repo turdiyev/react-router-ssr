@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'
 
-import configureStore from './configureStore'
-import App from './App';
+import configureStore from './shared/configureStore'
+import App from './shared/App';
 
 // Grab the state from a global variable injected into the server-generated HTML
 const preloadedState = window.__PRELOADED_STATE__;
