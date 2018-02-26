@@ -3,11 +3,12 @@ import rootReducer from './reducers'
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { routerMiddleware } from 'react-router-redux'
+import { Map, fromJS } from 'immutable';
 
 // import createHistory from 'history/createHashHistory';
 // import createHistory from 'history/createMemoryHistory';
 
-export default function configureStore(initialState) {
+export default function configureStore(initialState = fromJS({}) ) {
     console.log("initialState === ", initialState)
 
     const middleware = [

@@ -5,9 +5,9 @@ import { Provider } from 'react-redux'
 
 import configureStore from './shared/configureStore'
 import App from './shared/App';
-
+import {fromJS} from 'immutable';
 // Grab the state from a global variable injected into the server-generated HTML
-const preloadedState = window.__PRELOADED_STATE__;
+const preloadedState = fromJS(window.__PRELOADED_STATE__);
 
 // Allow the passed state to be garbage-collected
 delete window.__PRELOADED_STATE__;

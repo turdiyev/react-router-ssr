@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import homepageStyles from './homepage.scss';
 import aboutStyles from './aboutpage.scss';
-import { loadQuestions } from './appActions'
-import Menu from './Menu'
+import { loadQuestions } from './appActions';
+import Menu from './Menu';
 
 class Contact extends Component {
 	render() {

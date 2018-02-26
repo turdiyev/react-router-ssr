@@ -7,7 +7,7 @@ import logger from 'redux-logger'
 import { Provider } from 'react-redux'
 // import 'babel-polyfill';
 import App from './shared/App';
-import rootReducers from './shared/reducers'
+
 import configureStore from './shared/configureStore';
 
 import Template from './template';
@@ -18,16 +18,13 @@ import routes from './shared/routes'
 
 export default function serverRenderer({ clientStats, serverStats }) {
 	return async (req, res, next) => {
-		// axios.get('https://api.github.com/')
-		// 	.then((resT) => {
 		try {
-
+			console.log("SERVER RENDERING STARTED")
 			const context = {};
 			// Create a new Redux store instance
 			const store = configureStore();
 
 
-			console.log("response");
 			let foundPath = null;
 			let { path, component } = routes.find(
 				({ path, exact }) => {
@@ -44,7 +41,7 @@ export default function serverRenderer({ clientStats, serverStats }) {
 			if (!component.fetchData) component.fetchData = () => new Promise(resolve => resolve());
 
 			await component.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
-			console.log("Server Renderer =====> ")
+			console.log("Server Renderer =====> ", store)
 
 			// console.log('ready')
 			const markup = ReactDOMServer.renderToString(
@@ -56,10 +53,7 @@ export default function serverRenderer({ clientStats, serverStats }) {
 			);
 			const helmet = Helmet.renderStatic();
 
-			// Grab the initial state from our Redux store
-			const preloadedState = store.getState();
-
-
+			const preloadedState = store.getState().toJS();
 
 
 			if (context.url)
@@ -78,7 +72,5 @@ export default function serverRenderer({ clientStats, serverStats }) {
 		} catch (error) {
 			res.status(400).send(Template({ markup: 'An error occured.', preloadedState: {}, helmet: {} }));
 		}
-		// })
-
 	};
 }

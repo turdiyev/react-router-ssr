@@ -14,7 +14,7 @@ export default ({ markup, helmet, preloadedState, resData }) => {
 </head>
 <body ${helmet.bodyAttributes.toString()}>
 	<div id="root">${markup}</div>
-	<div id="aa">${JSON.stringify(resData)}</div>
+	<div id="aa">${JSON.stringify(preloadedState)}</div>
 	<script src="/static/client.js" async></script>
 </body>
 </html>`;

@@ -15,23 +15,24 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
-		// this.props.loadQuestions()
+		this.props.loadQuestions()
 	}
 	render() {
 		const { test } = this.props;
-		const render = [];
-		if (test && test.list) {
-			for (let key in test.list) {
-				render.push(test.list[key])
-			}
+		let render = '';
+		if (test && test.get('res')) {
+			test.get('res').map((v, k) => {
+				render += ' ' + v;
+			})
 		}
 		return (
 			<div>
-				{render}
 				<Helmet
 					title="Welcome to our Home Page"
 				/>
 				<Menu></Menu>
+				{render}
+
 				<h1>Home</h1>
 			</div>
 		);
@@ -40,6 +41,6 @@ class Home extends Component {
 
 
 function mapStateToProps(state) {
-	return { test: state.test };
+	return { test: state.get('test') };
 }
 export default connect(mapStateToProps, { loadQuestions })(Home)
