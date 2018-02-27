@@ -13,7 +13,7 @@ class HomeContainer extends Component {
 	}
 
 	componentDidMount() {
-		this.props.loadQuestions()
+		this.props.loadQuestions();
 	}
 	render() {
 		const { app } = this.props;
@@ -41,4 +41,4 @@ class HomeContainer extends Component {
 function mapStateToProps(state) {
 	return { app: state.get('app') };
 }
-export default connect(mapStateToProps, { loadQuestions:appAction.loadQuestions })(HomeContainer)
+export default connect(mapStateToProps, { loadQuestions: appAction.loadQuestions })(HomeContainer)
