@@ -1,19 +1,9 @@
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
+import HomeContainer from './containers/Home/HomeContainer';
 
 export default [
     {
         path: '/',
-        component: Home,
+        component: HomeContainer,
         exact: true
-    },
-    {
-        path: '/about',
-        component: About
-    },
-    {
-        path: '/contact',
-        component: Contact
     }
 ]

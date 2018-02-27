@@ -9,16 +9,16 @@ import { loadQuestions } from './appActions';
 import * as appAction from './appActions';
 import Menu from './Menu'
 
-class Home extends Component {
-	static fetchData({ store }) {
-		return store.dispatch(appAction.loadQuestions());
+class ProductItemContainer extends Component {
+	static fetchData({ store, params }) {
+		return store.dispatch(appAction.loadQuestions(params));
 	}
 
 	componentDidMount() {
 		this.props.loadQuestions()
 	}
 	render() {
-		const { test } = this.props;
+		const { test , location,params, match, } = this.props;
 		let render = '';
 		if (test && test.get('res')) {
 			test.get('res').map((v, k) => {
@@ -30,10 +30,13 @@ class Home extends Component {
 				<Helmet
 					title="Welcome to our Home Page"
 				/>
+				{JSON.stringify(location)}
+				{JSON.stringify(match)}
+				
 				<Menu></Menu>
 				{render}
 
-				<h1>Home</h1>
+				<h1>Item</h1>
 			</div>
 		);
 	}
@@ -43,4 +46,4 @@ class Home extends Component {
 function mapStateToProps(state) {
 	return { test: state.get('test') };
 }
-export default connect(mapStateToProps, { loadQuestions })(Home)
+export default connect(mapStateToProps, { loadQuestions })(ProductItemContainer)

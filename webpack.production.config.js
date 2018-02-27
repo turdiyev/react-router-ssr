@@ -50,7 +50,7 @@ module.exports = [
 							loader: 'sass-loader'
 						}
 					]
-				}     
+				}
 			],
 		},
 		plugins: [
@@ -60,11 +60,26 @@ module.exports = [
 				}
 			}),
 			new webpack.optimize.UglifyJsPlugin({
+				output: {
+					comments: false
+				},
+				mangle: true,
+				sourcemap: false,
+				debug: false,
+				minimize: true,
 				compress: {
 					warnings: false,
 					screw_ie8: true,
 					drop_console: true,
-					drop_debugger: true
+					drop_debugger: true,
+					conditionals: true,
+					unused: true,
+					comparisons: true,
+					sequences: true,
+					dead_code: true,
+					evaluate: true,
+					if_return: true,
+					join_vars: true
 				}
 			}),
 			new webpack.optimize.OccurrenceOrderPlugin(),

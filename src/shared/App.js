@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { Switch, Route, NavLink as Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
-import homepageStyles from './homepage.scss';
-import aboutStyles from './aboutpage.scss';
-import { loadQuestions } from './appActions'
 import routes from './routes'
 
 class App extends Component {

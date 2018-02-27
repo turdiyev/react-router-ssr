@@ -1,20 +1,17 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter, matchPath } from 'react-router-dom';
-
 import { createStore, applyMiddleware } from 'redux'
 import logger from 'redux-logger'
 import { Provider } from 'react-redux'
-// import 'babel-polyfill';
-import App from './shared/App';
+import { Helmet } from "react-helmet";
+import thunk from 'redux-thunk'
 
+import App from './shared/App';
+import routes from './shared/routes'
 import configureStore from './shared/configureStore';
 
 import Template from './template';
-import { Helmet } from "react-helmet";
-import thunk from 'redux-thunk'
-import axios from 'axios';
-import routes from './shared/routes'
 
 export default function serverRenderer({ clientStats, serverStats }) {
 	return async (req, res, next) => {

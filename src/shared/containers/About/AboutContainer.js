@@ -8,7 +8,7 @@ import aboutStyles from './aboutpage.scss';
 import { loadQuestions } from './appActions'
 import Menu from './Menu'
 
-class About extends Component {
+class AboutContainer extends Component {
 	render() {
 		const { test } = this.props;
 		const render = [];

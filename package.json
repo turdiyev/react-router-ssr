@@ -1,5 +1,5 @@
 {
-  "name": "lebazar_uz",
+  "name": "sherali_universall_app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,6 +15,7 @@
     "axios": "^0.18.0",
     "history": "^4.7.2",
     "immutable": "^3.8.2",
+    "lodash": "^4.17.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
