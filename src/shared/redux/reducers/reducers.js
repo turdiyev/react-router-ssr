@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux-immutable';
-import app from './appReducers'
+import { combineReducers } from "redux"
+import app from "./appReducers"
 
 const rootReducer = combineReducers({
-    app
+  app
 })
 
-export default rootReducer;
+export default rootReducer
