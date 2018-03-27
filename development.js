@@ -20,4 +20,4 @@ app.use(
 )
 app.use(webpackHotServerMiddleware(compiler))
 
-app.listen(3200)
+app.listen(4000)
