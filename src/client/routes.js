@@ -1,8 +1,6 @@
-
-
 export default [
-    {
-        path: '/',
-        component: Home
-    }
+  {
+    path: "/",
+    component: Home
+  }
 ]

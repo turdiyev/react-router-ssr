@@ -1,9 +1,9 @@
-import HomeContainer from './containers/Home/HomeContainer';
+import HomeContainer from "./containers/Home/HomeContainer"
 
 export default [
-    {
-        path: '/',
-        component: HomeContainer,
-        exact: true
-    }
+  {
+    path: "/",
+    component: HomeContainer,
+    exact: true
+  }
 ]

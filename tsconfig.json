@@ -1,16 +1,16 @@
 {
-    "compilerOptions": {
-        "allowJs": true,
-        "outDir": "tsDist",
-        "module": "commonjs",
-        "target": "es6",
-        "jsx": "react",   
-        "allowSyntheticDefaultImports": true,
+    "compilerOptions" : {
+        "allowJs" : true,
+        "outDir" : "tsDist",
+        "module" : "commonjs",
+        "target" : "es6",
+        "jsx" : "react",   
+        "allowSyntheticDefaultImports" : true, 
     },
-    "include": [
+    "include" : [
         "src/**/*"
     ],
-    "exclude": [
+    "exclude" : [
         "node_modules",
         "**/*.spec.ts"
     ]

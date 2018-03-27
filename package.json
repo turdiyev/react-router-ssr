@@ -9,12 +9,12 @@
     "start:prod": "NODE_ENV=production node production.js",
     "build": "NODE_ENV=production webpack --config webpack.production.config.js --progress --profile --colors",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "precommit": "lint-staged  src/**/*.js",
-    "format": "prettier --write src/**/*.js",
+    "precommit": "lint-staged  src/",
+    "format": "prettier --write src/**/*.{js,ts}",
     "lint": "eslint --fix src/**/*.js"
   },
   "lint-staged": {
-    "*.{js,css,scss}": [
+    "*.{js,ts,css,scss}": [
       "prettier --write",
       "git add"
     ]
@@ -22,12 +22,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/classnames": "^2.2.3",
     "@types/lodash": "^4.14.106",
     "@types/react": "^16.0.41",
     "@types/react-dom": "^16.0.4",
     "@types/react-redux": "^5.0.15",
     "@types/redux": "^3.6.0",
+    "@types/sprintf-js": "^1.1.0",
     "axios": "^0.18.0",
+    "classnames": "^2.2.5",
     "global": "^4.3.2",
     "history": "^4.7.2",
     "lodash": "^4.17.5",
@@ -40,8 +43,7 @@
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "request": "^2.83.0",
-    "webpack-cli": "^2.0.13"
+    "sprintf-js": "^1.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -54,6 +56,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.9",
+    "debug": "^3.1.0",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
@@ -69,8 +72,11 @@
     "sass-loader": "^6.0.6",
     "stats-webpack-plugin": "^0.6.2",
     "style-loader": "^0.20.2",
+    "tslint": "^5.9.1",
+    "tslint-react": "^3.5.1",
     "webpack": "^3.11.0",
     "webpack-cleanup-plugin": "^0.5.1",
+    "webpack-cli": "^2.0.13",
     "webpack-dev-middleware": "^2.0.5",
     "webpack-dev-server": "^3.1.1",
     "webpack-hot-middleware": "^2.21.0",

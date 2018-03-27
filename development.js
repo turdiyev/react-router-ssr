@@ -1,3 +1,4 @@
+const debug = require("debug")("http")
 const express = require("express")
 const path = require("path")
 const app = express()
@@ -7,6 +8,8 @@ const webpackHotMiddleware = require("webpack-hot-middleware")
 const webpackHotServerMiddleware = require("webpack-hot-server-middleware")
 const config = require("./webpack.development.config.js")
 const compiler = webpack(config)
+
+debug("booting %o", "App")
 
 app.use(
   webpackDevMiddleware(compiler, {
@@ -20,4 +23,4 @@ app.use(
 )
 app.use(webpackHotServerMiddleware(compiler))
 
-app.listen(4000)
+app.listen(4000, () => debug("listening"))

@@ -6,7 +6,7 @@ import logger from "redux-logger"
 import { Provider } from "react-redux"
 import { Helmet } from "react-helmet"
 import thunk from "redux-thunk"
-
+import debug from "debug"
 import App from "./shared/App"
 import routes from "./shared/routes"
 import configureStore from "./shared/configureStore"
@@ -70,15 +70,13 @@ export default function serverRenderer({ clientStats, serverStats }) {
           })
         )
     } catch (error) {
-      res
-        .status(400)
-        .send(
-          Template({
-            markup: "An error occured.",
-            preloadedState: {},
-            helmet: {}
-          })
-        )
+      res.status(400).send(
+        Template({
+          markup: "An error occured.",
+          preloadedState: {},
+          helmet: {}
+        })
+      )
     }
   }
 }
