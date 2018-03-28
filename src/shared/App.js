@@ -1,10 +1,7 @@
 import React, { Component } from "react"
 import { Switch, Route, NavLink as Link } from "react-router-dom"
-import { connect } from "react-redux"
 import Helmet from "react-helmet"
 import routes from "./routes"
-import { User } from "./User"
-import TsComponent from "./components/TsComponent"
 
 class App extends Component {
   render() {
@@ -18,8 +15,6 @@ class App extends Component {
     ))
     return (
       <div>
-        {}
-        <TsComponent defaultName={new User("Sinov uchun").firstName} />
         <Helmet
           htmlAttributes={{ lang: "en", amp: undefined }} // amp takes no value
           titleTemplate="%s | React App"
